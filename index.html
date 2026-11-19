@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Middleware Engineer — Production Systems</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #1a1d27;
+      --text: #e4e6eb;
+      --muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --border: #2d3142;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero .tagline {
+      font-size: 1.4rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .hero .subtitle {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: #cbd5e1;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .stat { text-align: center; }
+    .stat .number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .stat .label {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Section */
+    section {
+      padding: 70px 0;
+      border-top: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .section-label {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    /* Project Card */
+    .project {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .project h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .project p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background: #1e293b;
+      color: #93c5fd;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Timeline */
+    .timeline-item {
+      margin-bottom: 32px;
+      padding-left: 20px;
+      border-left: 2px solid var(--border);
+    }
+    .timeline-item .role {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .timeline-item .company {
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+    .timeline-item .period {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .skill-card h4 {
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+    .skill-card ul {
+      list-style: none;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+    .skill-card li { margin-bottom: 4px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="hero">
+      <h1>Middleware Engineer</h1>
+      <p class="tagline">Keeping Java, Tomcat & Integration systems running</p>
+      <p class="subtitle">
+        I design, deploy and maintain production middleware platforms — 
+        Tomcat clusters, message brokers, APIs and integration layers — 
+        with a strong focus on stability, security and automation.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="number">8+</div>
+          <div class="label">Years in Middleware</div>
+        </div>
+        <div class="stat">
+          <div class="number">40+</div>
+          <div class="label">Tomcat / App Instances</div>
+        </div>
+        <div class="stat">
+          <div class="number">24/7</div>
+          <div class="label">Production Support</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selected Work -->
+    <section>
+      <span class="section-label">01 — Selected Work</span>
+      <h2>Built for production, not the demo.</h2>
+
+      <div class="project">
+        <h3>Tomcat Fleet Management</h3>
+        <p>
+          Standardized and automated the lifecycle of multiple Apache Tomcat instances 
+          (including custom paths under /app). Implemented systemd services, memory tuning, 
+          graceful shutdowns, and centralized logging. Reduced OutOfMemory incidents through 
+          proper heap configuration and monitoring.
+        </p>
+        <div class="tags">
+          <span class="tag">Apache Tomcat</span>
+          <span class="tag">systemd</span>
+          <span class="tag">Java 21</span>
+          <span class="tag">Memory Tuning</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Containerized Middleware Stack</h3>
+        <p>
+          Designed and maintained Docker-based middleware environments including 
+          MongoDB, RabbitMQ, MinIO and custom APIs. Implemented health checks, 
+          proper networking, and staging-to-production promotion flows.
+        </p>
+        <div class="tags">
+          <span class="tag">Docker</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">MinIO</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Java Runtime Hardening & Patching</h3>
+        <p>
+          Managed OpenJDK upgrades across environments, including emergency response 
+          to critical CVEs (e.g. Java4Shell). Applied temporary mitigations and 
+          coordinated permanent version upgrades with minimal downtime.
+        </p>
+        <div class="tags">
+          <span class="tag">OpenJDK</span>
+          <span class="tag">CVE Response</span>
+          <span class="tag">Security Patching</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Career -->
+    <section>
+      <span class="section-label">02 — Career</span>
+      <h2>Building reliable middleware platforms.</h2>
+
+      <div class="timeline-item">
+        <div class="role">Middleware / Application Support Engineer</div>
+        <div class="company">Current Role</div>
+        <div class="period">Present</div>
+        <p>Responsible for Tomcat, Java runtimes, message brokers and integration services in production. Focus on stability, performance tuning and automation.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="role">Application Support / Middleware</div>
+        <div class="company">Previous Experience</div>
+        <div class="period">Earlier years</div>
+        <p>Supported Java-based applications, performed deployments, troubleshooting and performance analysis across UAT and Production environments.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <span class="section-label">03 — Skills</span>
+      <h2>The toolkit, battle-tested.</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Application Servers</h4>
+          <ul>
+            <li>Apache Tomcat</li>
+            <li>WildFly / JBoss (familiar)</li>
+            <li>systemd service management</li>
+            <li>Memory & GC tuning</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h4>Java & Runtime</h4>
+          <ul>
+            <li>OpenJDK 17 / 21</li>
+            <li>JVM troubleshooting</li>
+            <li>Heap dump analysis</li>
+            <li>Security patching</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h4>Messaging & Data</h4>
+          <ul>
+            <li>RabbitMQ</li>
+            <li>MongoDB</li>
+            <li>MinIO / Object Storage</li>
+            <li>Basic Kafka knowledge</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h4>Containers & Automation</h4>
+          <ul>
+            <li>Docker & Docker Compose</li>
+            <li>Bash scripting</li>
+            <li>Ansible (basic–intermediate)</li>
+            <li>CI/CD awareness</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h4>Operating Systems</h4>
+          <ul>
+            <li>RHEL / CentOS / Rocky</li>
+            <li>Ubuntu Server</li>
+            <li>Linux performance basics</li>
+            <li>Log analysis</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <h4>Observability</h4>
+          <ul>
+            <li>Application logs</li>
+            <li>JVM metrics</li>
+            <li>Health checks</li>
+            <li>Incident response</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section>
+      <span class="section-label">04 — About</span>
+      <h2>The person behind the uptime.</h2>
+      <p style="color:#cbd5e1; max-width:700px;">
+        I’m a middleware-focused engineer who prefers systems that are boringly reliable. 
+        I work with Java application servers, messaging systems and containerized services, 
+        with a strong emphasis on proper configuration, security patching and operational discipline.
+      </p>
+      <br>
+      <p style="color:#cbd5e1;">
+        Based in Malaysia · Working with production systems daily.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <span class="section-label">05 — Contact</span>
+      <h2>Let’s talk.</h2>
+      <p style="color:#cbd5e1;">
+        Middleware architecture, Tomcat tuning, Java runtime issues, or production support challenges — 
+        happy to exchange notes.
+      </p>
+      <br>
+      <p>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> · 
+        <a href="mailto:your.email@example.com">Email</a>
+      </p>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      Built for production. Kept simple on purpose.
+    </div>
+  </footer>
+
+</body>
+</html>
